@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Carpoolr</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_initialize">Initialize</string>
+    <string name="title_activity_discoverpage">discoverpage</string>
+    <string name="itemTitle">Carpool Name</string>
+    <string name="hostTitle">Host</string>
+    <string name="dateTitle">Date</string>
+    <string name="notSignedUp">Click to sign up</string>
+    <string name="title_activity_schedulrpage">schedulrpage</string>
+    <string name="title_activity_initializepage">initializepage</string>
+
+</resources>
