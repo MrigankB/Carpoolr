@@ -19,7 +19,6 @@ import android.widget.ImageButton;
 
 public class MainActivity extends ActionBarActivity {
 
-
     FragmentPagerAdapter mPagerAdapter;
 
     ViewPager mViewPager;

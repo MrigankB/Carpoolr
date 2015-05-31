@@ -9,12 +9,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class discoverpage extends ListActivity {
 
     ArrayAdapter<String> arrayAdapter;
-    protected String[] stringArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +29,9 @@ public class discoverpage extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id)
     {
-        TextView t = (TextView) v.findViewById(R.id.textView);
-        t.setText("Sign up successful");
+        /*TextView t = (TextView) v.findViewById(R.id.textView);
+        t.setText("Sign up successful");*/
+        Toast.makeText(this, "Sign up successful", Toast.LENGTH_SHORT).show();
     }
 
 

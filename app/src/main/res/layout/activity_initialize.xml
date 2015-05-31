@@ -13,29 +13,57 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_marginTop="70dp"
-        android:hint="Your Name Here (eg. Gank Mikku)"
+        android:id="@+id/nameText"
+        android:layout_marginTop="75dp"
+        android:hint="Enter Your Name Here (eg. Gank Mikku)"
         android:textIsSelectable="true"
         android:textSize="12dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <ImageButton
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:id="@+id/sumbitButton"
-        android:layout_marginBottom="103dp"
-        android:background="@drawable/sumbitbutton"
-        android:layout_alignParentBottom="true"
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startLocationText"
+        android:hint="Enter Start Location"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/nameText"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:hint="Starting Location"
-        android:layout_below="@+id/editText"
+        android:id="@+id/startTime"
+        android:layout_below="@+id/startLocationText"
+        android:layout_marginTop="32dp"
+        android:hint="Enter Start Time"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/endLocationText"
+        android:layout_below="@+id/startTime"
+        android:layout_marginTop="8dp"
+        android:hint="Enter End Location"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/endTime"
+        android:layout_below="@+id/endLocationText"
+        android:layout_marginTop="30dp"
+        android:hint="Enter End Time"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/submitButton"
+        android:layout_marginBottom="103dp"
+        android:background="@drawable/sumbitbutton"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
