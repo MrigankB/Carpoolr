@@ -24,7 +24,7 @@ public class SchedulerFragment extends Fragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        arrayAdapter = new CarpoolAdaptor(getActivity(), new String[5]);
+        arrayAdapter = new CarpoolAdaptor(getActivity(), new Carpool[5]);
     }
 
 

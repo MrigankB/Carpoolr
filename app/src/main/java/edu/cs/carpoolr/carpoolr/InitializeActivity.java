@@ -1,6 +1,7 @@
 package edu.cs.carpoolr.carpoolr;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -50,13 +51,15 @@ public class InitializeActivity extends Activity {
                 mRef.child("hello").setValue("world");
 
                 String carpoolName = generateCarpoolName();
+
+
                 Firebase thisCarpool = mRef.child(carpoolName);
 
                 EditText[] texts = {mNameText, mStartLocationText, mEndLocationText, mStartTime, mEndTime};
 
                 System.out.println("nameText = "+mNameText.getText());
                 thisCarpool.child("Host").setValue(""+mNameText.getText());
-                System.out.println("carpoolName = "+carpoolName);
+                System.out.println("carpoolName = " + carpoolName);
 
                 thisCarpool.child("StartLocation").setValue(""+mStartLocationText.getText());
                 thisCarpool.child("EndLocation").setValue(""+mEndLocationText.getText());
@@ -64,6 +67,10 @@ public class InitializeActivity extends Activity {
                 thisCarpool.child("End Time").setValue(""+mEndTime.getText());
 
                 Toast.makeText(InitializeActivity.this, "Submit successful", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(InitializeActivity.this, discoverpage.class);
+                intent.putExtra(discoverpage.KEY_NAME, carpoolName);
+                startActivity(intent);
 
 
             }
