@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.ImageButton;
 
+import com.firebase.client.Firebase;
+
 
 public class MainActivity extends ActionBarActivity {
 
