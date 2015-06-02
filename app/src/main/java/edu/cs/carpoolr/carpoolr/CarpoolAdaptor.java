@@ -13,7 +13,7 @@ public class CarpoolAdaptor extends ArrayAdapter
 {
     private LayoutInflater inflater;
 
-    public CarpoolAdaptor(Activity activity, Carpool[] items)
+    public CarpoolAdaptor(Activity activity, String[] items)
     {
         super(activity, R.layout.discoveritem, items);
         inflater = activity.getWindow().getLayoutInflater();

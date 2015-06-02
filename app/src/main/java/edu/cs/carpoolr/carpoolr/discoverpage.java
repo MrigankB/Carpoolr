@@ -11,47 +11,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
-
-import java.util.List;
-
 
 public class discoverpage extends ListActivity {
 
     ArrayAdapter<String> arrayAdapter;
-    Carpool[] carpools;
-
-    public static final String KEY_NAME = "Carpool Name";
-
-    private Firebase mRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discoverpage);
 
-        Firebase.setAndroidContext(this);
-        mRef = new Firebase("https://glowing-inferno-3968.firebaseio.com/");
-        //Firebase carpool = mRef.child()
-
-        for(int i = 0; i < 1; i++)
-        {
-
-            mRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot)
-                {
-                    System.out.println(""+dataSnapshot.getValue());
-                }
-
-                @Override
-                public void onCancelled(FirebaseError firebaseError) {}
-            });
-        }
-        //arrayAdapter = new CarpoolAdaptor(this, );
+        arrayAdapter = new CarpoolAdaptor(this, new String[10]);
 
         setListAdapter(arrayAdapter);
     }
