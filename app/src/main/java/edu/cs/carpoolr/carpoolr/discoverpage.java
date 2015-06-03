@@ -21,7 +21,7 @@ public class discoverpage extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discoverpage);
 
-        arrayAdapter = new CarpoolAdaptor(this, new String[10]);
+        arrayAdapter = new CarpoolAdaptor(this, new String[6]);
 
         setListAdapter(arrayAdapter);
     }
