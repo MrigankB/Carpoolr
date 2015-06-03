@@ -9,7 +9,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 import java.util.Random;
 import java.util.UUID;
@@ -26,6 +29,7 @@ public class InitializeActivity extends Activity {
     private EditText mEndLocationText;
     private EditText mStartTime;
     private EditText mEndTime;
+    private int num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +51,6 @@ public class InitializeActivity extends Activity {
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRef.child("hello").setValue("world");
 
                 String carpoolName = generateCarpoolName();
                 Firebase thisCarpool = mRef.child(carpoolName);
@@ -73,10 +76,22 @@ public class InitializeActivity extends Activity {
 
     String generateCarpoolName (){
         String combined = "Carpool_";
-        for (int i=0;i<10;i++){
-            combined=combined+""+new Random().nextInt(10);
-        }
+        num = 1;
+        mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                while(dataSnapshot.hasChild("Carpool_"+num)) {
+                    num++;
+                }
 
-        return combined;
+            }
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+        return combined + num;
     }
+
 }
+
